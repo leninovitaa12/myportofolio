@@ -9,8 +9,8 @@ export default function Typewriter({
   pauseBetween = 1300,
   startDelay = 300,
 }) {
-  const [phase, setPhase] = useState("idle") // idle | typing | pausing | deleting | done
-  const [idx, setIdx] = useState(0) // which sentence is active
+  const [phase, setPhase] = useState("idle") // idle | typing | pausing | deleting
+  const [idx, setIdx] = useState(0)
   const [out, setOut] = useState("")
   const timerRef = useRef(null)
 
@@ -31,15 +31,13 @@ export default function Typewriter({
         setPhase("pausing")
       }
     } else if (phase === "pausing") {
-      timerRef.current = setTimeout(() => {
-        if (idx < sentences.length - 1) setPhase("deleting")
-        else setPhase("done")
-      }, pauseBetween)
+      timerRef.current = setTimeout(() => setPhase("deleting"), pauseBetween)
     } else if (phase === "deleting") {
       if (out.length > 0) {
         timerRef.current = setTimeout(() => setOut(out.slice(0, -1)), deleteSpeed)
       } else {
-        setIdx((i) => Math.min(i + 1, sentences.length - 1))
+        // move to next sentence (loop)
+        setIdx((i) => (i + 1) % sentences.length)
         setPhase("typing")
       }
     }
