@@ -1,157 +1,114 @@
 const projects = [
   {
-    title: "Company Profile Catering DewaDewi Madiun",
-    desc: "Website Company Profile using React JS Vite",
-    tags: ["React JS"],
-    // demo: "https://example.com/cat-feeder",
-    repo: "https://github.com/leninovitaa12/Company-Profile-Catering-DewaDewi.git",
+    title: "Company Profile Website",
+    description: "A beautiful web application built with React and modern technologies.",
+    tags: ["React", "Tailwind", "JavaScript"],
+    link: "https://github.com/leninovitaa12/Company-Profile-Catering-DewaDewi.git",
+    website: "https://www.cateringdewadewimadiun.com/", 
     image: "/models/catering.png",
   },
   {
-    title: "Drakor Popular Machine Learning",
-    desc: "Lorem ipsum",
-    tags: ["Python", "Streamlit"],
-    demo: "https://drakor-poputer-app-machine-learning-8dwdombv2n7ft8mmwpcno8.streamlit.app/",
-    repo: "https://github.com/leninovitaa12/k-drama-populer-machine-learning-web.git",
-    image: "/models/drakor.png", 
-  },
-  {
-    title: "Hand Tracking",
-    desc: "A simple machine learning model for hand tracking using Python Mediapipe.",
-    tags: ["Python", "Mediapipe"],
-    // demo: "https://example.com/triptailor",
-    repo: "https://github.com/leninovitaa12/handtracking.git",
-    image: "https://picsum.photos/seed/travel/800/480",
-  },
-  {
-    title: "SmartPhone Watcher",
-    desc: "Python program that alerts you with a voice notification whenever you unlock your phone using YOLOv8.",
+    title: "Smartphone Watcher",
+    description: "Python program that alerts you with a voice notification whenever you unlock your phone using YOLOv8.",
     tags: ["OpenCV", "Python", "Computer Vision"],
-    // demo: "https://example.com/robot-arm",
-    repo: "https://github.com/leninovitaa12/SmartPhone-Watcher.git",
-    image: "https://picsum.photos/seed/robot/800/480",
+    link: "https://github.com/leninovitaa12/SmartPhone-Watcher.git",
+    website: "", 
+    image: "/models/smartphone.png",
   },
   {
-    title: "Encryption and Decryption File for Data Security",
-    desc: "ML model to recommend books based on reading patterns and genres.",
-    tags: ["Python", ],
-    demo: "https://example.com/novel-recommender",
-    repo: "https://github.com/yourname/novel-recommender",
-    image: "https://picsum.photos/seed/novel/800/480",
+    title: "Drakor Popular Machine Learning",
+    description: "A machine learning project exploring data patterns and predictions Popular Korean Drama.",
+    tags: ["Python", "ML", "Data Science"],
+    link: "https://github.com/leninovitaa12/k-drama-populer-machine-learning-web.git",
+    website: "https://drakor-poputer-app-machine-learning-8dwdombv2n7ft8mmwpcno8.streamlit.app/", 
+    image: "/models/kdrama.png",
   },
   {
-    title: "Analysis Healthy Food for Better life",
-    desc: "ML .",
-    tags: ["Python", ],
-    demo: "",
-    repo: "https://github.com/rkaaaaaa/Nutrisi-Hidup-Sehat.git",
-    image: "https://picsum.photos/seed/novel/800/480",
+    title: "Warehouse Management Apps",
+    description: "An Android application for monitoring warehouse data, implementing bindings, fragments, and APIs for efficient and modern data management.",
+    tags: ["Kotlin"],
+    link: "https://github.com/hamdaniqhmqd/APK-Monitoring-Gudang.git",
+    website: "", 
+    image: "/models/warehouse.png",
   },
-
+  {
+    title: "Geometry Dash Game With Scratch",
+    description: "Geometry dash game using block programming with Scratch.",
+    tags: ["Game", "Scratch", "Block Programming"],
+    // link: "https://github.com",
+    website: "https://scratch.mit.edu/projects/1207774327", 
+    image: "/models/geometry.png",
+  },
+  {
+    title: "Smart Band for Teens",
+    description: "IoT-based wearable device designed to monitor users’ physical activity and heart rate, integrated with an AI algorithm to provide personalized exercise recommendations.",
+    tags: ["IoT", "Kotlin", "Firebase", "AI"],
+    link: "https://github.com",
+    website: "",
+    image: "/models/smartband.png",
+  },
 ]
-
-function IconExternal({ className = "icon" }) {
-  return (
-    <svg
-      className={className}
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-      <path d="M15 3h6v6" />
-      <path d="M10 14L21 3" />
-    </svg>
-  )
-}
-
-function IconGitHub({ className = "icon" }) {
-  return (
-    <svg
-      className={className}
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      role="img"
-      aria-label="GitHub"
-      fill="currentColor"
-    >
-      <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.75.08-.73.08-.73 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.31 3.52 1 .11-.79.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.9 0-1.3.47-2.36 1.25-3.19-.13-.31-.54-1.55.12-3.23 0 0 1.01-.32 3.3 1.22.96-.27 1.98-.4 3-.41 1.02.01 2.04.14 3 .41 2.3-1.54 3.3-1.22 3.3-1.22.66 1.68.25 2.92.12 3.23.78.83 1.25 1.89 1.25 3.19 0 4.58-2.81 5.6-5.49 5.9.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .5Z" />
-    </svg>
-  )
-}
 
 export default function Projects() {
   return (
-    <>
-      <h2 style={{ fontSize: "1.75rem", marginBottom: "0.75rem" }}>Projects</h2>
-      <p style={{ color: "#cbd5e1", marginBottom: "1.25rem" }}>
-        A selection of things I’ve built and experimented with.
-      </p>
+    <section className="projects" id="projects">
+      <div className="projects-container">
+        <h2 className="section-title">Projects</h2>
 
-      <div className="grid cols-3">
-        {projects.map((p) => (
-          <article className="card project-card" key={p.title}>
-            {/* Media header */}
-            <div className="card-media">
-              {p.image ? (
-                <img src={p.image || "/placeholder.svg"} alt={`${p.title} preview`} loading="lazy" />
-              ) : (
-                <div className="card-media-fallback" aria-hidden="true" />
-              )}
-            </div>
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div key={index} className="project-card">
+              <div className="project-image">
+                <img src={project.image || "/placeholder.svg"} alt={project.title} />
+              </div>
 
-            {/* Body */}
-            <div className="card-body">
-              <div className="card-head">
-                <h3 className="card-title">{p.title}</h3>
-                <div className="card-actions">
-                  {p.demo && (
-                    <a
-                      href={p.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="icon-link"
-                      aria-label={`Open live demo of ${p.title}`}
-                      title="Open demo"
-                    >
-                      <IconExternal />
-                    </a>
-                  )}
-                  {p.repo && (
-                    <a
-                      href={p.repo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="icon-link"
-                      aria-label={`Open GitHub repository of ${p.title}`}
-                      title="GitHub"
-                    >
-                      <IconGitHub />
-                    </a>
-                  )}
+              <div className="project-content">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                <div className="project-tags">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="tag">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
 
-              <p className="card-desc">{p.desc}</p>
+              <div className="project-footer">
+                {project.website && (
+                  <a
+                    href={project.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="website-link"
+                    title="Visit Website"
+                  >
+                    <svg className="website-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"></path>
+                    </svg>
+                  </a>
+                )}
 
-              <div className="tags">
-                {p.tags.map((t) => (
-                  <span className="badge" key={t}>
-                    {t}
-                  </span>
-                ))}
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="github-link"
+                    title="View on GitHub"
+                  >
+                    <svg className="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                  </a>
+                )}
+
+                <span className="project-arrow">→</span>
               </div>
             </div>
-          </article>
-        ))}
+          ))}
+        </div>
       </div>
-    </>
+    </section>
   )
 }

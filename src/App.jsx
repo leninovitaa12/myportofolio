@@ -1,40 +1,29 @@
-import Navbar from "./components/Navbar.jsx"
-import Hero from "./components/Hero.jsx"
-import Projects from "./components/Projects.jsx"
-import About from "./components/About.jsx"
-import Resume from "./components/Resume.jsx"
-import Footer from "./components/Footer.jsx"
+"use client"
+import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
+import About from "./components/About"
+import Projects from "./components/Projects"
+import Resume from "./components/Resume"
+import Footer from "./components/Footer"
+import "./styles.css"
 
-export default function App() {
+function App() {
+  // All sections now render together in one scrollable page
+
   return (
-    <>
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
-      <main id="main">
-        <section id="home" className="section">
-          <div className="container">
-            <Hero />
-          </div>
-        </section>
 
-        <section id="projects" className="section">
-          <div className="container">
-            <Projects />
-          </div>
-        </section>
-
-        <section id="about" className="section">
-          <div className="container">
-            <About />
-          </div>
-        </section>
-
-        <section id="resume" className="section">
-          <div className="container">
-            <Resume />
-          </div>
-        </section>
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Resume />
       </main>
+
       <Footer />
-    </>
+    </div>
   )
 }
+
+export default App

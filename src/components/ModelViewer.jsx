@@ -16,7 +16,6 @@ function AutoRotate({ targetRef, isDraggingRef, speed = 0.12 }) {
 function BookModel({ groupRef }) {
   const { scene } = useGLTF("/models/paladins_book__ancient_knights_secrets.glb")
 
-  // Bersihkan outline/wire
   scene.traverse((obj) => {
     const name = (obj.name || "").toLowerCase()
     if (obj.type === "Line" || obj.type === "LineSegments" || obj.type === "LineLoop") obj.visible = false
@@ -27,11 +26,8 @@ function BookModel({ groupRef }) {
     }
   })
 
-  // ✅ Ambil anak pertama (karena model utama biasanya ada di children[0])
   const mainModel = scene.children[0] || scene
-
-  // ✅ Paksa skala besar agar terlihat jelas
-  mainModel.scale.set(7, 7, 7) // ubah angka 10 → 15 jika masih kecil
+  mainModel.scale.set(7, 7, 7)
   mainModel.position.set(0, 0, 0)
 
   return (
@@ -56,7 +52,12 @@ export default function ModelCanvas() {
 
   return (
     <div style={{ height: 520, borderRadius: 12, overflow: "hidden" }}>
-      <Canvas camera={{ position: [2.6, 1.9, 3.2], fov: 42 }} shadows gl={{ antialias: true }}>
+      <Canvas
+        camera={{ position: [2.6, 1.9, 3.2], fov: 42 }}
+        shadows
+        gl={{ antialias: true }}
+        frameloop="always" // ✅ animasi tetap hidup meskipun tidak interaksi
+      >
         <ambientLight intensity={0.8} />
         <directionalLight
           position={[4, 6, 5]}

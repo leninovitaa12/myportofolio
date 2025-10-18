@@ -1,39 +1,54 @@
 "use client"
 
 import { useState } from "react"
+import { Menu, X } from "lucide-react"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleMenu = () => setIsOpen(!isOpen)
-  const closeMenu = () => setIsOpen(false)
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "projects", label: "Projects" },
+    { id: "about", label: "About" },
+    { id: "resume", label: "Resume" },
+  ]
+
+  const handleNavClick = (id) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+    setIsOpen(false)
+  }
 
   return (
     <nav className="navbar">
-      <div className="nav-content">
-        <div className="mobile-menu-header">
-          <span className="logo">Menu</span>
-          <button className={`menu-toggle ${isOpen ? "active" : ""}`} onClick={toggleMenu} aria-label="Toggle menu">
-            <span />
-            <span />
-            <span />
-          </button>
+      {/* Desktop Navbar - Centered */}
+      <div className="navbar-desktop">
+        <div className="navbar-glass">
+          {navItems.map((item) => (
+            <button key={item.id} onClick={() => handleNavClick(item.id)} className="nav-link">
+              {item.label}
+            </button>
+          ))}
         </div>
+      </div>
 
-        <div className={`nav-links-glass ${isOpen ? "open" : ""}`}>
-          <a href="#home" className="nav-link" onClick={closeMenu}>
-            Home
-          </a>
-          <a href="#projects" className="nav-link" onClick={closeMenu}>
-            Projects
-          </a>
-          <a href="#about" className="nav-link" onClick={closeMenu}>
-            About
-          </a>
-          <a href="#resume" className="nav-link" onClick={closeMenu}>
-            Resume
-          </a>
-        </div>
+      {/* Mobile Navbar - Icon */}
+      <div className="navbar-mobile">
+        <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {isOpen && (
+          <div className="mobile-menu">
+            {navItems.map((item) => (
+              <button key={item.id} onClick={() => handleNavClick(item.id)} className="mobile-nav-link">
+                {item.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </nav>
   )
